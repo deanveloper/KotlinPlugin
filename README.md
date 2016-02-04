@@ -3,15 +3,16 @@ Let's take a look at each basic plugin subsystem...
 
 -----
 ###Listeners
-Listeners are pretty similar to how we do them in Java. Although in some events, `null` is very common and very annoying to handle, a great example being in PlayerInteractEvent. With Kotlin, its null-safety makes everything much easier, condensing
+Listeners are pretty similar to how we do them in Java. Although in some events, `null` is very common and very annoying to handle, a great example being in PlayerInteractEvent. With Kotlin, its null-safety makes everything much easier. The following in Java:
 ```
+String s = null;
 if(e.hasItem() && e.getItem().hasItemMeta() && e.getItem().getItemMeta().hasDisplayName()) {
-    e.getItem().getItemMeta().getDisplayName()
+    s = e.getItem().getItemMeta().getDisplayName();
 }
 ``` 
-all the way down to a single line of code
+can be condensed all the way down to a single line of code:
 ```
-e.item?.itemMeta?.displayName
+val s = e.item?.itemMeta?.displayName
 ```
 (File for reference: [KotlinListener.kt](https://github.com/unon1100/KotlinPlugin/blob/master/src/main/java/com/deanveloper/kotlintest/KotlinListener.kt))
 
