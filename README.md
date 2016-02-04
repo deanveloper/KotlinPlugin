@@ -19,7 +19,10 @@ val s = e.item?.itemMeta?.displayName
 ------
 ###Commands
 Commands are now also much easier. An echo command can be made in one line without use of other external libraries (such as google guava's `Joiner` class). In Kotlin, we can just do `sender!!.sendMessage(args?.joinToString(separator=" "))` to echo the arguments back to the sender.
+
 **(File for reference: [KotlinEchoCmd.kt](https://github.com/unon1100/KotlinPlugin/blob/master/src/main/java/com/deanveloper/kotlintest/KotlinEchoCmd.kt))**
+
+---------
 
 Also, Kotlin has safe casting as well. This makes running player-specific funtions on a `CommandSender` very easy!
 ```
