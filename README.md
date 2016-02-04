@@ -14,18 +14,18 @@ can be condensed all the way down to a single line of code:
 ```
 val s = e.item?.itemMeta?.displayName
 ```
-(File for reference: [KotlinListener.kt](https://github.com/unon1100/KotlinPlugin/blob/master/src/main/java/com/deanveloper/kotlintest/KotlinListener.kt))
+**(File for reference: [KotlinListener.kt](https://github.com/unon1100/KotlinPlugin/blob/master/src/main/java/com/deanveloper/kotlintest/KotlinListener.kt))**
 
 ------
 ###Commands
 Commands are now also much easier. An echo command can be made in one line without use of other external libraries (such as google guava's `Joiner` class). In Kotlin, we can just do `sender!!.sendMessage(args?.joinToString(separator=" "))` to echo the arguments back to the sender.
-(File for reference: [KotlinEchoCmd.kt](https://github.com/unon1100/KotlinPlugin/blob/master/src/main/java/com/deanveloper/kotlintest/KotlinEchoCmd.kt))
+**(File for reference: [KotlinEchoCmd.kt](https://github.com/unon1100/KotlinPlugin/blob/master/src/main/java/com/deanveloper/kotlintest/KotlinEchoCmd.kt))**
 
 Also, Kotlin has safe casting as well. This makes running player-specific funtions on a `CommandSender` very easy!
 ```
 (sender as? Player)?.chat("I just ran the /player command!") ?: sender?.sendMessage("You aren't a player :(")
 ```
-(File for reference: [KotlinPlayerCmd.kt](https://github.com/unon1100/KotlinPlugin/blob/master/src/main/java/com/deanveloper/kotlintest/KotlinPlayerCmd.kt))
+**(File for reference: [KotlinPlayerCmd.kt](https://github.com/unon1100/KotlinPlugin/blob/master/src/main/java/com/deanveloper/kotlintest/KotlinPlayerCmd.kt))**
 
 -------
 ###Main Plugin
@@ -35,7 +35,7 @@ Registering a `Listener` or `CommandExecutor` is now much easier as well! Becaus
 #####Getting values from the config
 Really this isn't that much different other than how you type `config` instead of `getConfig()`. Also, the null safety makes everything pretty easy with configs as well.
 
-(File for reference: [KotlinPlugin.kt](https://github.com/unon1100/KotlinPlugin/blob/master/src/main/java/com/deanveloper/kotlintest/KotlinPlugin.kt))
+**(File for reference: [KotlinPlugin.kt](https://github.com/unon1100/KotlinPlugin/blob/master/src/main/java/com/deanveloper/kotlintest/KotlinPlugin.kt))**
 
 ----------
 ###Epilogue
