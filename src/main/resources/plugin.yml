@@ -1,0 +1,7 @@
+main: com.deanveloper.kotlintest.KotlinPlugin
+author: Dean
+version: ${project.version}
+
+command:
+    echo:
+    player:
