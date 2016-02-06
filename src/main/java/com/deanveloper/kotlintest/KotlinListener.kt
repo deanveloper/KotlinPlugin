@@ -6,16 +6,21 @@ import org.bukkit.event.EventHandler
 import org.bukkit.event.Listener
 import org.bukkit.event.block.Action
 import org.bukkit.event.player.PlayerInteractEvent
+import org.bukkit.event.player.PlayerMoveEvent
 
 /**
- * Example Listener (Click a stick, get its name)
+ * Example Events
  *
  * @author Dean B
  */
-object KotlinListener: Listener {
+object KotlinListener : Listener {
+
+    infix fun Location.equalsBlock(other: Location) =
+            this.blockX == other.blockX && this.blockY == other.blockY && this.blockZ == other.blockZ
+
     @EventHandler
     public fun onStickClick(e: PlayerInteractEvent) {
-        if(e.action == Action.PHYSICAL) return;
+        if(e.action == Action.PHYSICAL) return; //make sure it isn't a pressure plate or tripwire
 
         if(e.item?.type == Material.STICK) {
             e.player.sendMessage("You clicked a stick named [${e.item.itemMeta?.displayName ?: "Unnamed"}]")

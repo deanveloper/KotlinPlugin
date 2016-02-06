@@ -12,7 +12,7 @@ import org.bukkit.entity.Player
  */
 object KotlinPlayerCmd: CommandExecutor {
     override fun onCommand(sender: CommandSender?, cmd: Command?, lbl: String?, args: Array<out String>?): Boolean {
-        (sender as? Player)?.sendMessage("You are a player!") ?: sender?.sendMessage("Not a player")
+        (sender as? Player)?.chat("I just ran the /player command")?: sender?.sendMessage("You aren't a player :(")
 
         return true;
     }
