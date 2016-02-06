@@ -7,14 +7,14 @@ Let's take a look at each basic plugin subsystem...
 #####Null Safety
 Listeners are pretty similar to how we do them in Java. Although in some events, `null` is very common and very annoying to handle, a great example being in PlayerInteractEvent. With Kotlin, its null-safety makes everything much easier. The following in Java:
 ```
-String s = null;
+String s = "Unnamed";
 if(e.hasItem() && e.getItem().hasItemMeta() && e.getItem().getItemMeta().hasDisplayName()) {
     s = e.getItem().getItemMeta().getDisplayName();
 }
 ``` 
 can be condensed all the way down to a single line of code:
 ```
-val s = e.item?.itemMeta?.displayName
+val s = e.item?.itemMeta?.displayName ?: "Unnamed"
 ```
 
 #####Infix Functions
