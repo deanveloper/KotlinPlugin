@@ -1,5 +1,6 @@
 package com.deanveloper.kotlintest
 
+import org.bukkit.Location
 import org.bukkit.Material
 import org.bukkit.event.EventHandler
 import org.bukkit.event.Listener
@@ -18,6 +19,14 @@ object KotlinListener: Listener {
 
         if(e.item?.type == Material.STICK) {
             e.player.sendMessage("You clicked a stick named [${e.item.itemMeta?.displayName ?: "Unnamed"}]")
+        }
+    }
+
+    @EventHandler
+    public fun onMove(e: PlayerMoveEvent) {
+        //prevent too many calculations from being calculated by only checking when players change blocks
+        if(!(e.from equalsBlock e.to)) { // infix function equalsBlock shown above
+            e.player.damage(0.0);
         }
     }
 }
