@@ -78,4 +78,4 @@ Really this isn't that much different other than how you type `config` instead o
 
 ----------
 ###Epilogue
-I hope you found this useful! Kotlin is very useful for creating Bukkit plugins, and I hope to see some really cool plugins in the future made with this language. If you found this useful, feel free to star the repo and check it out whenever you want. I'll definitely add more to it, including things like how `infix` functions can be used!
+I hope you found this useful! Kotlin is very useful for creating Bukkit plugins, and I hope to see some really cool plugins in the future made with this language. If you found this useful, feel free to star the repo and check it out whenever you want. I'll definitely add more to it in the future!
