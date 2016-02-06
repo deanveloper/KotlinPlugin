@@ -3,6 +3,8 @@ Let's take a look at each basic plugin subsystem...
 
 -----
 ###Listeners
+
+#####Null Safety
 Listeners are pretty similar to how we do them in Java. Although in some events, `null` is very common and very annoying to handle, a great example being in PlayerInteractEvent. With Kotlin, its null-safety makes everything much easier. The following in Java:
 ```
 String s = null;
@@ -14,16 +16,50 @@ can be condensed all the way down to a single line of code:
 ```
 val s = e.item?.itemMeta?.displayName
 ```
+
+#####Infix Functions
+Infix functions makes code look much cleaner. Take a common operation done in PlayerMoveEvent, making it so that the calculation is only done if the player moves a block. Normally what you would see is...
+```
+Location from = e.getFrom();
+Location to = e.getTo();
+if(!(from.getBlockX() == to.getBlockX() && from.getBlockY() == to.getBlockY() && from.getBlockZ() == to.getBlockZ())) {
+    e.getPlayer().damage(0.0);
+}
+```
+Some people would make it look a bit cleaner by doing this...
+```
+public boolean equalsBlock(Location from, Location to) {
+    return from.getBlockX() == to.getBlockX() && from.getBlockY() == to.getBlockY() && from.getBlockZ() == to.getBlockZ()
+}
+public void onMove(PlayerMoveEvent e) {
+    if(!equalsBlock(e.getFrom(), e.getTo()) {
+        e.getPlayer().damage(0.0);
+    }
+}
+```
+But with Kotlin, we can make it look even CLEANER with an infix function!
+```
+infix fun Location.equalsBlock(other: Location) =
+        this.blockX == other.blockX && this.blockY == other.blockY && this.blockZ == other.blockZ
+
+public fun onMove(e: PlayerMoveEvent) {
+    if(!(e.from equalsBlock e.to)) {
+        e.player.damage(0.0);
+    }
+}
+```
+
 **(File for reference: [KotlinListener.kt](https://github.com/unon1100/KotlinPlugin/blob/master/src/main/java/com/deanveloper/kotlintest/KotlinListener.kt))**
 
 ------
 ###Commands
+
+#####Echo
 Commands are now also much easier. An echo command can be made in one line without use of other external libraries (such as google guava's `Joiner` class). In Kotlin, we can just do `sender!!.sendMessage(args?.joinToString(separator=" "))` to echo the arguments back to the sender.
 
 **(File for reference: [KotlinEchoCmd.kt](https://github.com/unon1100/KotlinPlugin/blob/master/src/main/java/com/deanveloper/kotlintest/KotlinEchoCmd.kt))**
 
----------
-
+#####Safe Casting
 Also, Kotlin has safe casting as well. This makes running player-specific funtions on a `CommandSender` very easy!
 ```
 (sender as? Player)?.chat("I just ran the /player command!") ?: sender?.sendMessage("You aren't a player :(")
