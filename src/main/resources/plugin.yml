@@ -5,3 +5,5 @@ version: ${project.version}
 command:
     echo:
     player:
+    jarjar:
+       usage: '/jarjar <movie>
