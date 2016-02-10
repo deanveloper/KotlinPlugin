@@ -7,9 +7,9 @@ import org.bukkit.command.CommandExecutor
 import org.bukkit.command.CommandSender
 
 /**
- * (description)
+ * An example of lambdas in Kotlin
  *
- * @author (name)
+ * @author Dean B
  */
 object KotlinTestRunnable: CommandExecutor {
     override fun onCommand(sender: CommandSender, cmd: Command, lbl: String, args: Array<String>): Boolean {
