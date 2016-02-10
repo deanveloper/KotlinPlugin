@@ -12,17 +12,17 @@ import java.util.*
  *
  * @author Dean B
  */
-data class KotlinPlayerData (val id: UUID, val name: String){
+data class PlayerData(val id: UUID, val name: String){
     var silly: Boolean = false;
     companion object: Listener {
-        private val data = HashMap<UUID, KotlinPlayerData>()
+        private val data = HashMap<UUID, PlayerData>()
 
         //allows us to do KotlinPlayerData[id]
-        operator fun get(id: UUID?): KotlinPlayerData? = data[id]
-        operator fun get(p: Player?): KotlinPlayerData? = KotlinPlayerData[p?.uniqueId]
+        operator fun get(id: UUID?): PlayerData? = data[id]
+        operator fun get(p: Player?): PlayerData? = PlayerData[p?.uniqueId]
 
         @EventHandler
-        public fun onJoin(e: PlayerJoinEvent) = KotlinPlayerData(e.player.uniqueId, e.player.name)
+        public fun onJoin(e: PlayerJoinEvent) = PlayerData(e.player.uniqueId, e.player.name)
 
         @EventHandler
         public fun onQuit(e: PlayerQuitEvent) = data.remove(e.player.uniqueId)

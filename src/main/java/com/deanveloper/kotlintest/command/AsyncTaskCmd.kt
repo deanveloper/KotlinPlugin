@@ -12,7 +12,7 @@ import org.bukkit.command.CommandSender
  *
  * @author Dean B
  */
-object KotlinTestRunnable: CommandExecutor {
+object AsyncTaskCmd : CommandExecutor {
     override fun onCommand(sender: CommandSender, cmd: Command, lbl: String, args: Array<String>): Boolean {
         val movie: Int;
         try {
