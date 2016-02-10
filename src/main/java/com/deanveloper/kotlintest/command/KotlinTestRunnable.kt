@@ -1,5 +1,6 @@
-package com.deanveloper.kotlintest;
+package com.deanveloper.kotlintest.command;
 
+import com.deanveloper.kotlintest.KotlinPlugin
 import khttp.get
 import org.bukkit.Bukkit
 import org.bukkit.command.Command

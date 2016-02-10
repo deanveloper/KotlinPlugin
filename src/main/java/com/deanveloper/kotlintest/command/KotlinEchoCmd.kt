@@ -1,4 +1,4 @@
-package com.deanveloper.kotlintest
+package com.deanveloper.kotlintest.command
 
 import org.bukkit.command.Command
 import org.bukkit.command.CommandExecutor
