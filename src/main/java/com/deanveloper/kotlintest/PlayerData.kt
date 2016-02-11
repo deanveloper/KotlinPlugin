@@ -18,8 +18,8 @@ data class PlayerData(val id: UUID, val name: String){
         private val data = HashMap<UUID, PlayerData>()
 
         //allows us to do KotlinPlayerData[id]
-        operator fun get(id: UUID?): PlayerData? = data[id]
-        operator fun get(p: Player?): PlayerData? = PlayerData[p?.uniqueId]
+        operator fun get(id: UUID?) = data[id]
+        operator fun get(p: Player) = PlayerData[p.uniqueId]!!
 
         @EventHandler
         public fun onJoin(e: PlayerJoinEvent) = PlayerData(e.player.uniqueId, e.player.name)
