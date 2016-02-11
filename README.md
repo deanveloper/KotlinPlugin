@@ -76,6 +76,9 @@ Really this isn't that much different other than how you type `config` instead o
 
 **(File for reference: [KotlinPlugin.kt](https://github.com/unon1100/KotlinPlugin/blob/master/src/main/java/com/deanveloper/kotlintest/KotlinPlugin.kt))**
 
+---------
+### PlayerData
+[Wiki Page](https://github.com/unon1100/KotlinPlugin/wiki/PlayerData-Classes)
 ----------
 ###Epilogue
 I hope you found this useful! Kotlin is very useful for creating Bukkit plugins, and I hope to see some really cool plugins in the future made with this language. If you found this useful, feel free to star the repo and check it out whenever you want. I'll definitely add more to it in the future!
