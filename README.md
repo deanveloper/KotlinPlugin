@@ -78,6 +78,7 @@ Really this isn't that much different other than how you type `config` instead o
 
 ---------
 ### PlayerData
+
 [Wiki Page](https://github.com/unon1100/KotlinPlugin/wiki/PlayerData-Classes)
 ----------
 ###Epilogue
