@@ -17,7 +17,7 @@ can be condensed all the way down to a single line of code:
 val s = e.item?.itemMeta?.displayName ?: "Unnamed"
 ```
 
-#####Infix Functions
+##### Infix Functions
 Infix functions makes code look much cleaner. Take a common operation done in PlayerMoveEvent, making it so that the calculation is only done if the player moves a block. Normally what you would see is...
 ```Java
 Location from = e.getFrom();
